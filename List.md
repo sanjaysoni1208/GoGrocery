@@ -8,3 +8,5 @@
 8. Once a voucher is applied, make it inactive.
 9. Edit the "Voucher Validation Trigger" and implement Discounted Amount 
 10. Default value of the Discount Applied field is 0 **Done**
+11. Price Book Entry Feature in Admin.
+12. 
