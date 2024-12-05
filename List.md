@@ -1,5 +1,5 @@
 1. Organise the fields and and the relationships.
-2. Flows
+2. Flows.
 3. Triggers
 4. Voucher Validation Trigger **Done**
 5. Field in Order --> Calculate total Amount after Voucher Addition
