@@ -34,7 +34,7 @@ public class VoucherDiscountHandler{
             }
         
             // Handle invalid or inactive voucher codes
-            if(ord.Voucher_Code__c!=NULL && voucher.ID==NULL){    
+            if(ord.Voucher_Code__c!=NULL && (voucher.ID==NULL || voucher.IsActive__c==false)){    
                 ord.addError('Invalid or inactive voucher code.');
             }
         }
