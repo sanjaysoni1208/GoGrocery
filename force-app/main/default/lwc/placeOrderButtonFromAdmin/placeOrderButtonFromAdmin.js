@@ -13,11 +13,3 @@ export default class NavigateToOrderPage extends NavigationMixin(LightningElemen
         });
     }
 }
-
-
-
-
-
-
-
-

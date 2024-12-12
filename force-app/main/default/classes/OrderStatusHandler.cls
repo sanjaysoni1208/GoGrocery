@@ -1,6 +1,7 @@
 public class OrderStatusHandler {
     public static void updateOrderStatus(List<Order__c> orders) {
         List<Order__c> ordersToUpdate = new List<Order__c>();
+        // Messaging.SingleEmailMessage is a Salesforce class used to create and send a single email message programmatically.
         List<Messaging.SingleEmailMessage> emails = new List<Messaging.SingleEmailMessage>();
 
         for (Order__c order : orders) {
