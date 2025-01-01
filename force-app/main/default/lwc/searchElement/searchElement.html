@@ -1,0 +1,68 @@
+<template>
+    
+    <lightning-card title="What do you want today? ">
+        <div class="slds-box slds-m-around_medium">
+            <lightning-input placeholder="Enter Product name" name="searchText"
+                onchange={handleChange}></lightning-input>
+            <br>
+            <template if:true={products.length}>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Product Name">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th scope="col">
+                                <div class="slds-truncate" title="Name">Product Name</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Category">Product Category</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Isactive">Product Available</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Measuring Unit">Measuring Unit</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Stock Quantity">Stock Quantity</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Unit Price">Unit Price</div>
+                            </th>
+                            <!-- <th scope="col">
+                                <div class="slds-truncate" title="See Product">See Product</div>
+                            </th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={products} for:item="prod">
+                            <tr key={prod.Id} class="slds-hint-parent">
+                                <th data-label="Products Name" scope="row">
+                                    <div class="slds-truncate" title={prod.Name}>
+                                        <a href={prod.link} tabindex="-1" onclick={changePage}>{prod.Name}</a>
+                                    </div>
+                                </th>
+                                <td data-label="Category">
+                                    <div class="slds-truncate">{prod.Category__c}</div>
+                                </td>
+                                <td data-label="Product Available">
+                                    <div class="slds-truncate">{prod.IsActive__c}</div>
+                                </td>
+                                <td data-label="Measuring Unit">
+                                    <div class="slds-truncate">{prod.Unit_Of_Measurement__c}</div>
+                                </td>
+                                <td data-label="Stock Quantity">
+                                    <div class="slds-truncate">{prod.Stock_Quantity__c}</div>
+                                </td>
+                                <td data-label="Unit Price">
+                                    <div class="slds-truncate">{prod.Unit_Price__c}</div>
+                                </td>
+                                <!-- <td data-label="See Product">
+                                    <button onclick={handleclick}>Show</button>
+                                </td> -->
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+        </div>
+    </lightning-card>
+</template>

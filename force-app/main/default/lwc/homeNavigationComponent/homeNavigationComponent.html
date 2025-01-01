@@ -1,0 +1,53 @@
+<template>
+    <div class="viewProducts"
+        style="height: fit-content; background-color: #efebce; margin: 2px; align-items: center; padding: 5px; text-align: center;">
+        <h2 style="font-size: 2em; font-weight: bold; color: #2c3e50;">Navigation Menu</h2>
+
+        <h3 style="font-size: 1.5em; color: #34495e;">Experience Cloud</h3>
+        <div style="display: flex; justify-content: center; ">
+            <lightning-button class="viewButton" variant="brand" label="Website Link"
+                onclick={handleClick}></lightning-button>
+        </div>
+
+        <h3 style="font-size: 1.5em; color: #34495e;">View or Create Product</h3>
+        <div style="display: flex; justify-content: center; gap: 10px;">
+            <lightning-button class="viewButton" variant="success" label="View Product records"
+                onclick={handleClick1}></lightning-button>
+            <lightning-button class="createButton" variant="destructive" label="Create new Product"
+                onclick={handleClick2}></lightning-button>
+        </div>
+
+        <h3 style="font-size: 1.5em; color: #34495e;">View or Create Cart</h3>
+        <div style="display: flex; justify-content: center; gap: 10px;">
+            <lightning-button class="viewButton" variant="success" label="View Cart records"
+                onclick={handleClick7}></lightning-button>
+            <lightning-button class="createButton" variant="destructive" label="Create new Cart"
+                onclick={handleClick8}></lightning-button>
+        </div>
+
+        <h3 style="font-size: 1.5em; color: #34495e;">View or Create Voucher</h3>
+        <div style="display: flex; justify-content: center; gap: 10px;">
+            <lightning-button class="viewButton" variant="success" label="View Voucher records"
+                onclick={handleClick5}></lightning-button>
+            <lightning-button class="createButton" variant="destructive" label="Create new Voucher"
+                onclick={handleClick6}></lightning-button>
+        </div>
+
+        <h3 style="font-size: 1.5em; color: #34495e;">View or Create Order</h3>
+        <div style="display: flex; justify-content: center; gap: 10px;">
+            <lightning-button class="viewButton" variant="success" label="View Order records"
+                onclick={handleClick3}></lightning-button>
+            <lightning-button class="createButton" variant="destructive" label="Create new Order"
+                onclick={handleClick4}></lightning-button>
+        </div>
+
+        <h3 style="font-size: 1.5em; color: #34495e;">Application Home Page</h3>
+        <div style="display: flex; justify-content: center; gap: 10px;">
+            <lightning-button class="viewButton" variant="success" label="GoGrocery Homepage"
+                onclick={handleClick9}></lightning-button>
+        </div>
+    </div>
+</template>
+
+
+<!-- d5eeef -->

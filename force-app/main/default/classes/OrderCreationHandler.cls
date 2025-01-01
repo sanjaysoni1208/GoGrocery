@@ -1,5 +1,36 @@
 public with sharing class OrderCreationHandler {
-    
+    @AuraEnabled
+    public static void createOrder(List<Id> cartItemIds) {
+        // Validate input
+        if (cartItemIds == null || cartItemIds.isEmpty()) {
+            throw new AuraHandledException('No cart items selected.');
+        }
+
+        try {
+            // Query the Cart__c records to get the Line_Total__c fields
+            List<Cart__c> cartItems = [SELECT Id, Line_Total__c FROM Cart__c WHERE Id IN :cartItemIds];
+            for(Cart__c c : cartItems){
+                System.debug(c);
+            }
+            
+            // Calculate the sum of Line_Total__c
+            Decimal totalOrderAmount = 0;
+            for (Cart__c cartItem : cartItems) {
+                totalOrderAmount += cartItem.Line_Total__c != null ? cartItem.Line_Total__c : 0;
+            }
+
+            // Create a new Order__c record
+            Order__c newOrder = new Order__c();
+            newOrder.Order_Total__c = totalOrderAmount;
+            
+            // Insert the order record
+            insert newOrder;
+
+        } catch (Exception e) {
+            // Handle any exceptions
+            throw new AuraHandledException('An error occurred while creating the order: ' + e.getMessage());
+        }
+    }
 }
 
 
@@ -11,89 +42,6 @@ public with sharing class OrderCreationHandler {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// public with sharing class OrderCreationHandler {
-//     @AuraEnabled
-//     public static void createOrder(List<Id> cartItemIds) {
-//         // Validate input
-//         if (cartItemIds == null || cartItemIds.isEmpty()) {
-//             throw new AuraHandledException('No cart items selected.');
-//         }
-
-//         try {
-//             // Query the Cart__c records to get the Line_Total__c fields
-//             List<Cart__c> cartItems = [SELECT Id, Line_Total__c FROM Cart__c WHERE Id IN :cartItemIds];
-            
-//             // Calculate the sum of Line_Total__c
-//             Decimal totalOrderAmount = 0;
-//             for (Cart__c cartItem : cartItems) {
-//                 totalOrderAmount += cartItem.Line_Total__c != null ? cartItem.Line_Total__c : 0;
-//             }
-
-//             // Create a new Order__c record
-//             Order__c newOrder = new Order__c();
-//             newOrder.Order_Total__c = totalOrderAmount;
-            
-//             // Insert the order record
-//             insert newOrder;
-
-//         } catch (Exception e) {
-//             // Handle any exceptions
-//             throw new AuraHandledException('An error occurred while creating the order: ' + e.getMessage());
-//         }
-//     }
-// }
 
 
 

@@ -36,3 +36,44 @@ public class OrderStatusHandler {
         }
     }
 }
+
+
+
+
+
+
+
+// public class OrderStatusHandler {
+//     public static void updateOrderStatus(List<Order__c> orders) {
+//         List<Order__c> ordersToUpdate = new List<Order__c>();
+//         List<Messaging.SingleEmailMessage> emails = new List<Messaging.SingleEmailMessage>();
+
+//         for (Order__c order : orders) {
+//             // Skip if there are validation errors
+//             if (order.hasErrors()) continue;
+
+//             if (order.Status__c == 'Pending' && order.User__c != null) {
+//                 Order__c updatedOrder = new Order__c(Id = order.Id);
+//                 updatedOrder.Status__c = 'Ready for Order';
+//                 ordersToUpdate.add(updatedOrder);
+
+//                 Contact contact = [SELECT Id, Email FROM Contact WHERE Id = :order.User__c];
+//                 Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
+//                 email.setToAddresses(new String[] { contact.Email });
+//                 email.setSubject('Ready for Order');
+//                 email.setPlainTextBody('Your order is now ready.');
+//                 emails.add(email);
+
+//                 OrderStatusScheduler.scheduleStatusUpdate(order.Id, contact.Email);
+//             }
+//         }
+
+//         if (!ordersToUpdate.isEmpty()) {
+//             update ordersToUpdate;
+//         }
+
+//         if (!emails.isEmpty()) {
+//             Messaging.sendEmail(emails);
+//         }
+//     }
+// }

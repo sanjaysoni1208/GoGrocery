@@ -1,0 +1,36 @@
+body {
+    background-color: #ffd3ac;
+    margin: 3px;
+}
+
+.viewProducts {
+    background-color: rgb(248, 217, 178);
+    border: 2px black;
+
+}
+
+h2 {
+    font-weight: 100;
+    font-size: larger;
+    text-align: center;
+    margin: 12px;
+    padding: 10px;
+
+}
+
+h3 {
+    font-weight: 500;
+    margin: 6px;
+    padding: 6px;
+
+}
+
+.viewButton {
+    align-items: center;
+    margin: 10px;
+}
+
+.createButton {
+    align-items: center;
+    margin: 10px;
+}

@@ -1,0 +1,77 @@
+:host {
+    /* --primary-color: #FFBF00;  */
+    --primary-color: #1e0101;
+    --secondary-color: #000000; 
+}
+
+.lightning-card .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.body{
+    background-color: rgb(228, 235, 241);
+}
+
+
+.lightning-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-name {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-code, .product-price {
+    color: var(--secondary-color);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.slds-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.slds-col {
+    flex: 1 1 calc(33.333% - 1rem);
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    .slds-col {
+        flex: 1 1 calc(50% - 1rem);
+    }
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 480px) {
+    .slds-col {
+        flex: 1 1 100%;
+    }
+}
+
+.lightning-card {
+    background-color: #f1e7d3;
+}

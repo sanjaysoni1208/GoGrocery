@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Cart Items" icon-name="utility:cart">
+        <lightning-datatable 
+            key-field="Id" 
+            data={cartData} 
+            columns={columns}>
+        </lightning-datatable>
+        <template if:true={cartData}>
+            <div class="slds-m-top_medium">
+                <p>No of Products: {totalProducts}</p>
+                <p style="margin-left: 30px ">Order Price: ₹ {totalOrder}</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

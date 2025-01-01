@@ -1,0 +1,53 @@
+.slds-box {
+    /* background-color: #f4f6f9; */
+    background-color: #f1e7d3;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.slds-m-around_medium {
+    margin: 1rem;
+}
+
+.slds-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.slds-table th, .slds-table td {
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.slds-table th {
+    background-color: #eceff1;
+    font-weight: bold;
+}
+
+.slds-table td {
+    background-color: #ffffff;
+}
+
+.slds-truncate {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+/* Button is disabled 
+ button {
+    background-color: #0070d2;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005bb5;
+} */
