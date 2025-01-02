@@ -1,7 +1,6 @@
 public class ClassTOOrder {
     public static void createOrder(list<Order__c> orders){
         
-        // list<Cart__c> c = new list<Cart__c>();
         Cart__c c = new Cart__c();
         list<Cart__c> cart = [SELECT Id, Name, Product__c, Quantity__c, Line_Total__c FROM Cart__c];
         Set<Id> ordId = new Set<Id>();

@@ -34,11 +34,5 @@ export default class SearchElement extends LightningElement {
             this.products = [];
         }
     }
-
-    handleclick(event) {
-        
-        
-    }
-
     columnlist = columns;
 }

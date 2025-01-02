@@ -23,12 +23,3 @@ export default class NavigateCart extends NavigationMixin(LightningElement) {
         });
     }
 }
-
-    // handleClick2(event){
-        // this[NavigationMixin.Navigate]({
-        //     type: 'standard__webPage',
-        //     attributes: {
-        //         url: 'https://gogrocerycom-dev-ed.develop.my.site.com/s/cart/Cart__c/Default'
-        //     }
-        // });
-    // }
