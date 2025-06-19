@@ -4,7 +4,7 @@ public with sharing class CartController {
     public static List<Product__c> getProducts() {
         // Check field accessibility
         if (!Schema.sObjectType.Product__c.isAccessible()) {
-            throw new SecurityException('Access to Product__c is denied');
+            throw new SecurityException('Access to Product__c is denied   ');
         }
         return [SELECT Id, Name, Unit_Price__c,Product_Image__c, Unit__c,Category__c, IsActive__c
                 FROM Product__c
